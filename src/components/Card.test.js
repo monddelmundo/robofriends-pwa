@@ -10,6 +10,5 @@ it("expect to render card component - using enzyme shallow", () => {
 
 it("expect to render card component - using jest snapshot", () => {
     //jest snapshot react-test-renderer
-    const tree = renderer.create(<Card />);
-    expect(tree).toMatchSnapshot();
+    expect(renderer.create(<Card />)).toMatchSnapshot();
 })

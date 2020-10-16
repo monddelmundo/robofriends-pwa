@@ -1,7 +1,6 @@
 import React from "react";
 
-const SearchBox = ({ searchField, searchChange }) => {
-  console.log("searchfield");
+const SearchBox = ({ searchChange }) => {
   //pa = padding, ba = border all sides, b = border, bg = background
   return (
     <div className="pa2">
