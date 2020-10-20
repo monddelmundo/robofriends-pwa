@@ -20,7 +20,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-    onRequestRobots: () => requestRobots(dispatch),
+    onRequestRobots: () => dispatch(requestRobots()),
   };
 }
 

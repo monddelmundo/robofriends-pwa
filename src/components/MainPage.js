@@ -40,7 +40,7 @@ function MainPage(props) {
 
   //tc = text center
   return isPending ? (
-    <h1>Loading...</h1>
+    <h1 name="loading">Loading...</h1>
   ) : (
     <div className="tc">
       <Header />
