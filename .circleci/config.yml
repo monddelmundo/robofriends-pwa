@@ -7,11 +7,7 @@ jobs:
       - checkout
       - run: echo "NPM Installing"
       - run: npm install
-      - run:
-          name: "Setting up env var CI and run build"
-          command: npm run build
-          #environment: #CI servers automatically sets this env var to true. Causes error.
-          #  CI: true
+      - run: npm run build
   test:
     docker:
       - image: cimg/node:15.2.0
