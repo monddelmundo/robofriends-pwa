@@ -21,7 +21,7 @@ describe("setSearchField", () => {
 describe("requestRobots", () => {
   //mock the redux store
   const store = mockStore();
-  store.dispatch(actions.requestRobots());
+  actions.requestRobots(store.dispatch);
   const action = store.getActions();
   const expectedAction = {
     type: constants.REQUEST_ROBOTS_PENDING,
