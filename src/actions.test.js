@@ -19,7 +19,8 @@ describe("setSearchField", () => {
 });
 
 describe("requestRobots", () => {
-  //mock the redux store
+  //mock the redux store. Updated: should have empty
+  //object when calling mockstore
   const store = mockStore({});
   actions.requestRobots(store.dispatch);
   const action = store.getActions();
