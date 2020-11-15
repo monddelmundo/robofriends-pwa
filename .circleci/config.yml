@@ -1,12 +1,35 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  build:
+    docker:
+      - image: cimg/node:15.2.0
+    steps:
+      - checkout
+      - run: echo "NPM Installing"
+      - run: npm install
+      - run:
+          name: "Running build"
+          command: "CI= npm run build"
+  test:
+    docker:
+      - image: cimg/node:15.2.0
+    steps:
+      - checkout
+      - run: echo "testing"
+      - run: npm install
+      - run: npm test
+  hithere:
+    docker:
+      - image: cimg/node:15.2.0
+    steps:
+      - checkout
+      - run: echo "Hi there!"
 workflows:
-  node-tests:
+  version: 2.1
+  build_test_and_lint:
     jobs:
-      - node/test:
-          version: 13.11.0
-      - node/test:
-          version: 12.16.0
-      - node/test:
-          version: 10.19.0
+      - build
+      - hithere
+      - test: #test jobs requires hithere to finish first
+          requires:
+            - hithere
