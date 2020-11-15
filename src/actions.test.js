@@ -20,7 +20,7 @@ describe("setSearchField", () => {
 
 describe("requestRobots", () => {
   //mock the redux store
-  const store = mockStore();
+  const store = mockStore({});
   actions.requestRobots(store.dispatch);
   const action = store.getActions();
   const expectedAction = {
