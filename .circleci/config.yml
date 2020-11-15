@@ -7,7 +7,9 @@ jobs:
       - checkout
       - run: echo "NPM Installing"
       - run: npm install
-      - run: npm run build
+      - run:
+          name: "Running build"
+          command: "CI= npm run build"
   test:
     docker:
       - image: cimg/node:15.2.0
