@@ -7,7 +7,10 @@ jobs:
       - checkout
       - run: echo "NPM Installing"
       - run: npm install
-      - run: CI=true npm run build #create env var
+      - run: #create env var
+          name: "Setting up env var CI and run build"
+          command: npm run build
+          environment: CI:true
   test:
     docker:
       - image: cimg/node:15.2.0
